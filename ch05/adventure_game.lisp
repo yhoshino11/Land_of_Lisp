@@ -60,3 +60,11 @@
     (remove-if-not #'at-loc-p objs)))
 ; (objects-at 'living-room *objects* *object-locations*)
 ; returns (WHISKEY BUCKET)
+
+
+(defun describe-objects (loc objs obj-loc)
+  (labels ((describe-obj (obj)
+                         `(you see a ,obj on the floor.)))
+    (apply #'append (mapcar #'describe-obj (objects-at loc objs obj-loc)))))
+; (describe-objects 'living-room *objects* *object-locations*)
+; returns (YOU SEE A WHISKEY ON THE FLOOR. YOU SEE A BUCKET ON THE FLOOR.)

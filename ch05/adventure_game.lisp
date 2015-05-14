@@ -68,3 +68,20 @@
     (apply #'append (mapcar #'describe-obj (objects-at loc objs obj-loc)))))
 ; (describe-objects 'living-room *objects* *object-locations*)
 ; returns (YOU SEE A WHISKEY ON THE FLOOR. YOU SEE A BUCKET ON THE FLOOR.)
+
+
+; current location
+(defparameter *location* 'living-room)
+
+(defun look ()
+  (append (describe-location *location* *nodes*)
+          (describe-paths *location* *edges*)
+          (describe-objects *location* *objects* *object-locations*)))
+; (look)
+; returns # if *location* is 'living-room
+; (YOU ARE IN THE LIVING-ROOM.
+;  A WIZARD IS SNORING LOUDLY ON THE COUCH.
+;  THERE IS A DOOR GOING WEST FROM HERE.
+;  THERE IS A LADDER GOING UPSTAIRS FROM HERE.
+;  YOU SEE A WHISKEY ON THE FLOOR.
+;  YOU SEE A BUCKET ON THE FLOOR.)

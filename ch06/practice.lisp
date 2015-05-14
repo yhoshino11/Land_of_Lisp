@@ -52,3 +52,43 @@
 
 ; (print '#\a)
 ; #\a
+
+; (princ '3)
+; 3
+
+; (princ '3.4)
+; 3.4
+
+; (princ 'foo)
+; FOO
+
+; (princ '"foo")
+; "foo"
+
+; (princ '#\a)
+; #\a
+
+; (progn (princ "This sentence will be interrupted")
+       ; (princ #\newline)
+       ; (princ "by an annoying newline character."))
+; This sentence will be interrupted
+; by an annoying newline character.
+
+; (defun say-hello ()
+     ; (princ "Please type your name:")
+     ; (let ((name (read-line)))
+       ; (princ "Nice to meet you, ")
+       ; (princ name)))
+; (say-hello)
+; Please type your name:yhoshino11
+; Nice to meet you, yhoshino11
+
+; (defparameter *foo* '(+ 1 2))
+; (eval *foo*)
+; 3
+
+; (defun game-repl ()
+  ; (loop (print (eval (read)))))
+; (game-repl) # Ctrl-C to exit
+; (+ 1 1)
+; 1

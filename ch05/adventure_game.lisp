@@ -114,3 +114,10 @@
 ; (walk 'east)
 ; (pickup 'whiskey)
 ; returns (YOU ARE NOW CARRYING THE WHISKEY)
+
+
+(defun inventory ()
+  (cons 'items- (objects-at 'body *objects* *object-locations*)))
+; (pickup 'whiskey) # if you are in the living-room
+; (inventory)
+; returns (ITEMS- WHISKEY)

@@ -37,3 +37,18 @@
 ;
 ; "When I add five I get"
 ; 8
+
+; (print '3)
+; 3
+
+; (print '3.4)
+; 3.4
+
+; (print 'foo)
+; FOO
+
+; (print '"foo")
+; "foo"
+
+; (print '#\a)
+; #\a

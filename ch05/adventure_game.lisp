@@ -85,3 +85,20 @@
 ;  THERE IS A LADDER GOING UPSTAIRS FROM HERE.
 ;  YOU SEE A WHISKEY ON THE FLOOR.
 ;  YOU SEE A BUCKET ON THE FLOOR.)
+
+
+(defun walk (direction)
+  (let ((next (find direction
+                    (cdr (assoc *location* *edges*))
+                    :key #'cadr)))
+    (if next
+      (progn (setf *location* (car next))
+             (look))
+      '(you cannot go that way.))))
+; (walk 'west)
+; returns
+; (YOU ARE IN A BEAUTIFUL GARDEN.
+;  THERE IS A WELL IN FRONT OF YOU.
+;  THERE IS A DOOR GOING EAST FROM HERE.
+;  YOU SEE A FROG ON THE FLOOR.
+;  YOU SEE A CHAIN ON THE FLOOR.)

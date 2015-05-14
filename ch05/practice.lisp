@@ -13,3 +13,6 @@
 ; (apply #'append '((THERE IS A DOOR GOING WEST FROM HERE.)
                   ; (THERE IS A LADDER GOING UPSTAIRS FROM HERE.)))
 ; returns (THERE IS A DOOR GOING WEST FROM HERE. THERE IS A LADDER GOING UPSTAIRS FROM HERE.)
+
+; (find 'y '((5 x) (3 y) (7 z)) :key #'cadr)
+; returns (3 Y)

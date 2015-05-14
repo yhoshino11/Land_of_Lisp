@@ -91,27 +91,3 @@
     ; ((johnny) (setf *arch-enemy* 'useless-old-johnny)
               ; '(i hope you choked on my pudding johnny))
     ; (otherwise '(why you eat my pudding stranger ?))))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -16,3 +16,7 @@
 
 ; (find 'y '((5 x) (3 y) (7 z)) :key #'cadr)
 ; returns (3 Y)
+
+; (defparameter *foo* '(1 2 3))
+; (push 7 *foo*)
+; returns (7 1 2 3)

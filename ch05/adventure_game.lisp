@@ -102,3 +102,15 @@
 ;  THERE IS A DOOR GOING EAST FROM HERE.
 ;  YOU SEE A FROG ON THE FLOOR.
 ;  YOU SEE A CHAIN ON THE FLOOR.)
+
+
+(defun pickup (object)
+  (cond ((member object
+                 (objects-at *location* *objects* *object-locations*))
+         (push (list object 'body) *object-locations*)
+         `(you are now carrying the ,object))
+        (t '(you cannot get that.))))
+; (walk 'west) # if you are in the living-room
+; (walk 'east)
+; (pickup 'whiskey)
+; returns (YOU ARE NOW CARRYING THE WHISKEY)

@@ -43,3 +43,6 @@
   (apply #'append (mapcar #'describe-path (cdr (assoc location edges)))))
 ; (describe-paths 'living-room *edges*)
 ; returns (THERE IS A DOOR GOING WEST FROM HERE. THERE IS A LADDER GOING UPSTAIRS FROM HERE.)
+
+
+(defparameter *objects* '(whiskey bucket frog chain))

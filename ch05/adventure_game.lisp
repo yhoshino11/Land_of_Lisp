@@ -24,11 +24,19 @@
 ; (assoc 'garden *edges*)
 ; returns (GARDEN (LIVING-ROOM EAST DOOR))
 
+; (cadr (assoc 'garden *edges*))
+; returns (LIVING-ROOM EAST DOOR)
+
 
 (defun describe-path (edge)
   `(there is a ,(caddr edge) going ,(cadr edge) from here.))
 ; (describe-path '(garden west door))
 ; returns (THERE IS A DOOR GOING WEST FROM HERE.)
+
+; (mapcar #'describe-path '((GARDEN WEST DOOR) (ATTIC UPSTAIRS LADDER)))
+; returns
+; ((THERE IS A DOOR GOING WEST FROM HERE.)
+;  (THERE IS A LADDER GOING UPSTAIRS FROM HERE.))
 
 
 (defun describe-paths (location edges)

@@ -177,3 +177,25 @@
       (dress 10))
   (+ cigar dress))
 ; returns 15
+
+
+(defun uedges->dot (edges)
+  (maplist (lambda (lst)
+             (mapc (lambda (edge)
+                     (unless (assoc (car edge) (cdr lst))
+                       (fresh-line)
+                       (princ (dot-name (caar lst)))
+                       (princ "--")
+                       (princ (dot-name (car edge)))
+                       (princ "[label=\"")
+                       (princ (dot-label (cdr edge)))
+                       (princ "\"];")))
+                   (cdar lst)))
+           edges))
+; (uedges->dot *wizard-edges*)
+; returns
+; GARDEN--LIVING_ROOM[label="(EAST DOOR)"];
+; ATTIC--LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];
+; (((GARDEN WEST DOOR) (ATTIC UPSTAIRS LADDER))
+;  ((LIVING-ROOM EAST DOOR))
+;  ((LIVING-ROOM DOWNSTAIRS LADDER)))

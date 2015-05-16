@@ -141,3 +141,39 @@
 ; GARDEN->LIVING_ROOM[label="(EAST DOOR)"];
 ; ATTIC->LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];}
 ; "}"
+
+
+(defun dot->png (fname thunk)
+  (with-open-file (*standard-output*
+                    fname
+                    :direction :output
+                    :if-exists :supersede)
+    (funcall thunk))
+  (ext:shell (concatenate 'string "dot -Tpng -O " fname)))
+
+
+(defun graph->png (fname nodes edges)
+  (dot->png fname
+            (lambda ()
+              (graph->dot nodes edges))))
+; (graph->png "wizard.dot" *wizard-nodes* *wizard-edges*)
+; creates wizard.dot.png
+
+
+(with-open-file (my-stream
+                  "testfile.txt"
+                  :direction :output
+                  :if-exists :supersede)
+  (princ "Hello File!" my-stream))
+; creates testfile.txt written "Hello File!" if the file doesn't exist.
+
+
+(let ((cigar 5))
+  cigar)
+; returns 5
+
+
+(let ((cigar 5)
+      (dress 10))
+  (+ cigar dress))
+; returns 15

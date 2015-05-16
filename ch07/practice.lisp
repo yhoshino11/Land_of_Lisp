@@ -123,3 +123,21 @@
 ; LIVING_ROOM->ATTIC[label="(UPSTAIRS LADDER)"];
 ; GARDEN->LIVING_ROOM[label="(EAST DOOR)"];
 ; ATTIC->LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];
+
+
+(defun graph->dot (nodes edges)
+  (princ "digraph{")
+  (nodes->dot nodes)
+  (edges->dot edges)
+  (princ "}"))
+; (graph->dot *wizard-nodes* *wizard-edges*)
+; returns
+; digraph{
+; LIVING_ROOM[label="(LIVING-ROOM (YOU ARE IN TH..."];
+; GARDEN[label="(GARDEN (YOU ARE IN A BEAUT..."];
+; ATTIC[label="(ATTIC (YOU ARE IN THE ATTI..."];
+; LIVING_ROOM->GARDEN[label="(WEST DOOR)"];
+; LIVING_ROOM->ATTIC[label="(UPSTAIRS LADDER)"];
+; GARDEN->LIVING_ROOM[label="(EAST DOOR)"];
+; ATTIC->LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];}
+; "}"

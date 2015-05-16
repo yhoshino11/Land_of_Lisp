@@ -28,3 +28,8 @@
   b)
 ; returns
 ; 7
+
+
+(random 2)
+; returns
+; 0 or 1

@@ -215,3 +215,29 @@
 ; GARDEN--LIVING_ROOM[label="(EAST DOOR)"];
 ; ATTIC--LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];}
 ; "}"
+
+
+(defun ugraph->png (fname nodes edges)
+  (dot->png fname
+            (lambda ()
+              (ugraph->dot nodes edges))))
+; (ugraph->png "uwizard.dot" *wizard-nodes* *wizard-edges*)
+; creates
+; uwizard.dot # text file
+; uwizard.dot.png
+
+
+; (mapcar #'print '(a b c))
+; returns
+; A
+; B
+; C
+; (A B C)
+
+
+; (maplist #'print '(a b c))
+; returns
+; (A B C)
+; (B C)
+; (C)
+; ((A B C) (B C) (C))

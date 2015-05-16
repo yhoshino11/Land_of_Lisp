@@ -199,3 +199,19 @@
 ; (((GARDEN WEST DOOR) (ATTIC UPSTAIRS LADDER))
 ;  ((LIVING-ROOM EAST DOOR))
 ;  ((LIVING-ROOM DOWNSTAIRS LADDER)))
+
+
+(defun ugraph->dot (nodes edges)
+  (princ "graph{")
+  (nodes->dot nodes)
+  (uedges->dot edges)
+  (princ "}"))
+; (ugraph->dot *wizard-nodes* *wizard-edges*)
+; returns
+; graph{
+; LIVING_ROOM[label="(LIVING-ROOM (YOU ARE IN TH..."];
+; GARDEN[label="(GARDEN (YOU ARE IN A BEAUT..."];
+; ATTIC[label="(ATTIC (YOU ARE IN THE ATTI..."];
+; GARDEN--LIVING_ROOM[label="(EAST DOOR)"];
+; ATTIC--LIVING_ROOM[label="(DOWNSTAIRS LADDER)"];}
+; "}"
